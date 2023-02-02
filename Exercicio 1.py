@@ -17,7 +17,6 @@ if x == fim:
     numeros.sort()
     y = len(numeros)
     soma = sum(numeros)
-    print(y)
     media = soma / (y+1)
 
     print ('Menor: ' + str(numeros[0]) + '  |  Maior: ' + str(numeros[y-1]) + '  |  Média: ' + str(media))
