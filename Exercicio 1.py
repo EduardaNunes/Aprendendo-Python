@@ -1,28 +1,41 @@
-fim = 'fim'
-numeros = []
+def repeat ():
+    print ('Gostaria de Começar Denovo? S/N ')
+    resposta = input();
 
-print ('Escreva um número inteiro ou digite fim para terminar:')
-x = input()
-teste = x.isnumeric()
+    if resposta == 'S':
+        main()
+    elif resposta =='N':
+        print('Programa Finalizado')
+    else:
+        print('Resposta Inválida')
+        repeat()
 
-while teste == True: 
+def main():
 
-    numeros.append(int(x))
-    print ('Escreva um número ou digite fim para terminar:')
-    x = input()
-    teste = x.isnumeric()
+    numeros = []
+    teste = True
+    x = 0
 
-if x == fim:
-    
-    numeros.sort()
-    y = len(numeros)
-    soma = sum(numeros)
-    media = soma / (y+1)
+    while teste == True: 
 
-    print ('Menor: ' + str(numeros[0]) + '  |  Maior: ' + str(numeros[y-1]) + '  |  Média: ' + str(media))
+        numeros.append(int(x))
+        print ('Escreva um número ou digite fim para terminar:')
+        x = input()
+        teste = x.isnumeric()
 
-else: 
-    print('ERROR - Por favor insira um número válido')
+    if x == 'fim':
+        
+        numeros.pop(0)
+        numeros.sort()
+        y = len(numeros)
+        soma = sum(numeros)
+        media = soma / y
 
+        print ('Menor: ' + str(numeros[0]) + '  |  Maior: ' + str(numeros[y-1]) + '  |  Média: ' + str(media))
+        repeat()
 
+    else: 
+        print('ERROR - Por favor insira um número válido')
+        repeat()
 
+main()
