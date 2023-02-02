@@ -29,6 +29,11 @@ def main():
         numeros.sort()
         y = len(numeros)
         soma = sum(numeros)
+
+        if y == 0 :
+            print('Por Favor Insira Algum Número Para Ser Calculado')
+            main()
+
         media = soma / y
 
         print ('Menor: ' + str(numeros[0]) + '  |  Maior: ' + str(numeros[y-1]) + '  |  Média: ' + str(media))
@@ -36,6 +41,6 @@ def main():
 
     else: 
         print('ERROR - Por favor insira um número válido')
-        repeat()
+        main()
 
 main()
